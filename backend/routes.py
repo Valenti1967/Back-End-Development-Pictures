@@ -111,7 +111,7 @@ def delete_picture(id):
         for picture in data:
             if picture["id"] == id:
                 data.remove(picture)
-                return {"message": f"picture with id {picture['id']} has been deleted"}, 204
+                return "", 204
 
         return {"message": "Picture not found"}, 404
 
