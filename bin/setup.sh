@@ -11,18 +11,18 @@ echo "Checking the Python version..."
 python3.9 --version
 
 echo "Creating a Python virtual environment"
-python3.9 -m venv ~/venv
+python3.9 -m venv ~/backend-pics-venv
 
 echo "Configuring the developer environment..."
 echo "# DevOps Capstone Project additions" >> ~/.bashrc
 echo "export GITHUB_ACCOUNT=$GITHUB_ACCOUNT" >> ~/.bashrc
 echo 'export PS1="\[\e]0;\u:\W\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ "' >> ~/.bashrc
-echo "source ~/venv/bin/activate" >> ~/.bashrc
+echo "source ~/backend-pics-venv/bin/activate" >> ~/.bashrc
 
 echo "Installing Python dependencies..."
-source ~/venv/bin/activate && python3.9 -m pip install --upgrade pip wheel
-source ~/venv/bin/activate && pip install -r requirements.txt
-source ~/venv/bin/activate && pip install pytest  # Add this line for pytest
+source ~/backend-pics-venv/bin/activate && python3.9 -m pip install --upgrade pip wheel
+source ~/backend-pics-venv/bin/activate && pip install -r requirements.txt
+source ~/backend-pics-venv/bin/activate && pip install pytest  # Add this line for pytest
 
 echo "Starting the Postgres Docker container..."
 make db
